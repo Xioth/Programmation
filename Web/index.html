@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nouveau test</title>
-</head>
-<body>
-    <div>Test</div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <title>Resizable Divs</title>
+
+        <style>
+        .vertical {
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            border: 1px solid silver;
+            overflow: hidden;
+        }
+
+        .top {
+            flex: 0 0 auto;
+            padding: 10px;
+            height: 100px;
+            width: 100%;
+            white-space: nowrap;
+            background: #838383;
+            color: white;
+        }
+
+        .splitter-horizontal {
+            flex: 0 0 auto;
+            height: 18px;
+            background:#535353;
+            cursor: row-resize;
+        }
+
+        .bottom {
+            flex: 1 1 auto;
+            padding: 10px;
+            min-height: 200px;
+            background: #eee;
+        }
+        </style>
+    </head>
+    <body>
+
+        <div class="vertical">
+            <div class="top">
+                Top
+            </div>
+            <div class="splitter-horizontal"></div>
+            <div class="bottom">
+                Bottom
+            </div>
+        </div>
+        
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="https://rawgit.com/RickStrahl/jquery-resizable/master/src/jquery-resizable.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".top").resizable({
+                    handleSelector: ".splitter-horizontal",
+                    resizeWidth: false
+                });
+            });
+        </script>
+
+    </body>
 </html>
