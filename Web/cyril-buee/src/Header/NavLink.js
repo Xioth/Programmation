@@ -1,9 +1,17 @@
 function NavLink({text, url}){
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <li>
-            <a href={url} className='font-bold hover:text-orange-400'>
+            <button onClick={() => scrollToSection(url)} className='font-bold hover:text-orange-400'>
                 {text}
-            </a>
+            </button>
         </li>
     )
 }

@@ -1,0 +1,24 @@
+.social {
+    position: fixed;
+    top: 0;
+    left: 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    padding: 5rem 0;
+    color: #fff;
+    justify-content: center;
+
+    z-index: 10;
+}
+
+.social::before,
+.social::after {
+    width: 1px;
+    height: 100%;
+    margin: 0 auto;
+    content: '';
+    background-color: rgba(255, 255, 255, .4);
+}

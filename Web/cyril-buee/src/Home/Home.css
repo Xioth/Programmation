@@ -1,0 +1,9 @@
+.section-with-background {
+    background-color: rgb(24, 24, 27);
+
+    background-image: url('background.png');
+    
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
